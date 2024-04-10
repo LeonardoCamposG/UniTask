@@ -1,0 +1,9 @@
+package com.UniTask.model;
+
+public class User {
+
+	public Integer id;
+	public String name;
+	public String mail;
+	public String password;
+}
