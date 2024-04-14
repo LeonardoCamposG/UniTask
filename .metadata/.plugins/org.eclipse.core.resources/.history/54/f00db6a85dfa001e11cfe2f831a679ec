@@ -1,0 +1,6 @@
+package com.UniTask.services;
+
+@Service
+public class UserService {
+
+}

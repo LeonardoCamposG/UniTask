@@ -1,0 +1,9 @@
+package com.UniTask.repositories;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.UniTask.model.User;
+
+public interface UserRepository extends JpaRepository<User, Long> {
+
+}
