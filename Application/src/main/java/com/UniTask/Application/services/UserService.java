@@ -22,4 +22,16 @@ public class UserService {
 	public User insert(User obj) {
 		return repository.save(obj);	// retorna obj salvo.
 	}
+	
+	public void delete(Long id) {
+		repository.deleteById(id);	// Está sem tratamento de try catch por hora, apenas para demonstrar requisição.
+	}
+	
+	public User update(Long id, User obj) {
+		User entity = findById(id);
+		entity.setName(obj.getName());
+		entity.setMail(obj.getMail());
+		entity.setPassword(obj.getPassword());
+		return repository.save(entity);
+	}
 }
