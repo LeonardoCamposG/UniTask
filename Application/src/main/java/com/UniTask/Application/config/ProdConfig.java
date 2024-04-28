@@ -7,7 +7,9 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 
+import com.UniTask.Application.model.Task;
 import com.UniTask.Application.model.User;
+import com.UniTask.Application.repositories.TaskRepository;
 import com.UniTask.Application.repositories.UserRepository;
 
 @Configuration
@@ -17,11 +19,21 @@ public class ProdConfig implements CommandLineRunner{
 	@Autowired	
 	private UserRepository userRepository; // Declarando dependência.
 	
+	@Autowired
+	private TaskRepository taskRepository;
+	
 	@Override
 	public void run(String... args) throws Exception{
 		
-		User u1 = new User(2L, "Maria Brown", "maria@gmail.com", "988888888");
-		User u2 = new User(3L, "Alex Green", "alex@gmail.com", "977777777"); 
-		userRepository.saveAll(Arrays.asList(u1, u2));
+		User u1 = new User(1L, "Maria Brown", "maria@gmail.com", "988888888");
+		User u2 = new User(2L, "Alex Green", "alex@gmail.com", "977777777"); 
+		User u3 = new User(3L, "Luis Felipe", "lf@gmail.com", "988887658");
+		userRepository.saveAll(Arrays.asList(u1, u2, u3));
+		
+		Task t1 = new Task(1L, "Café da manha", "tomar café da manha comendo bolo com chá", "28-04-2024", u1);
+		Task t2 = new Task(2L, "Café da mosso", "tomar café do mosso comendo xucrute com xurumi", "28-04-2024", u1);
+		Task t3 = new Task(3L, "Café da tarde", "tomar café da tarde comendo mamao com cereal", "28-04-2024", u2);
+		
+		taskRepository.saveAll(Arrays.asList(t1,t2,t3));
 	}
 }

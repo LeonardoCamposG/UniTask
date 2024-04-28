@@ -1,3 +1,0 @@
-spring.application.name=UniTask
-spring.profiles.active=test
-spring.jpa.open-in-view=true

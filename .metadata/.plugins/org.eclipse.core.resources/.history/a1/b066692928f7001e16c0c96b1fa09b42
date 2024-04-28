@@ -1,3 +1,0 @@
-#spring.application.name=Application
-#=prod para definir que o arquivo properties a ser considerado, é o .prod.
-spring.profiles.active=prod

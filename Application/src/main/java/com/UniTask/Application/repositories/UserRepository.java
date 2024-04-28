@@ -8,7 +8,4 @@ import com.UniTask.Application.model.User;
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
 
-	/*@Query("SELECT id, name, mail, password"
-		+ "	FROM public.user;")
-	User findById(String name, String mail, String password);*/
 }

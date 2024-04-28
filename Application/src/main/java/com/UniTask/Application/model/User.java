@@ -1,12 +1,17 @@
 package com.UniTask.Application.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -20,6 +25,10 @@ public class User implements Serializable{
 	public String name;
 	public String mail;
 	public String password;
+	
+	@JsonIgnore
+	@OneToMany(mappedBy = "user")
+	private List<Task> tasks = new ArrayList<>();
 	
 	public User() {
 	}

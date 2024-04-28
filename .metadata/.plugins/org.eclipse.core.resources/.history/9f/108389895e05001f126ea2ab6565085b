@@ -1,0 +1,5 @@
+package com.UniTask.Application.model;
+
+public class Task {
+
+}

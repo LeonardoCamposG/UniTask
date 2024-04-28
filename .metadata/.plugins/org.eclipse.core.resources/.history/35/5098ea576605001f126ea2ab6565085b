@@ -1,0 +1,5 @@
+package com.UniTask.Application.controller.exceptions;
+
+public class StandardError {
+
+}
