@@ -1,7 +1,5 @@
 package com.UniTask.Application.services;
 
-import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,24 +12,11 @@ public class UserService {
 	@Autowired
 	private	UserRepository repository;
 	
-	public User findById(Long id) {
-		Optional<User> obj = repository.findById(id);
-		return obj.get();
+	public Long login(String email, String password) {
+		return repository.countByEmailAndPassword(email, password);
 	}
 	
 	public User insert(User obj) {
 		return repository.save(obj);	// retorna obj salvo.
-	}
-	
-	public void delete(Long id) {
-		repository.deleteById(id);	// Está sem tratamento de try catch por hora, apenas para demonstrar requisição.
-	}
-	
-	public User update(Long id, User obj) {
-		User entity = findById(id);
-		entity.setName(obj.getName());
-		entity.setMail(obj.getMail());
-		entity.setPassword(obj.getPassword());
-		return repository.save(entity);
 	}
 }

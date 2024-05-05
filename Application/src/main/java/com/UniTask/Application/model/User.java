@@ -23,7 +23,7 @@ public class User implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public Long	id;
 	public String name;
-	public String mail;
+	public String email;
 	public String password;
 	
 	@JsonIgnore
@@ -37,7 +37,7 @@ public class User implements Serializable{
 		super();
 		this.id = id;
 		this.name = name;
-		this.mail = mail;
+		this.email = mail;
 		this.password = password;
 	}
 
@@ -58,11 +58,11 @@ public class User implements Serializable{
 	}
 
 	public String getMail() {
-		return mail;
+		return email;
 	}
 
 	public void setMail(String mail) {
-		this.mail = mail;
+		this.email = mail;
 	}
 
 	public String getPassword() {

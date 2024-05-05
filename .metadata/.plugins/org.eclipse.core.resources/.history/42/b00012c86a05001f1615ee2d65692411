@@ -1,8 +1,0 @@
-package com.UniTask.Application.controller.exceptions;
-
-import org.springframework.web.bind.annotation.ControllerAdvice;
-
-@ControllerAdvice	// Intercepta as exceções
-public class ResourceExceptionHandler {
-	
-}

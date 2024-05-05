@@ -7,5 +7,12 @@ import com.UniTask.Application.model.User;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
-
+	
+//	@Query("select	u"
+//		 + "from	User u"
+//		 + "where	u.mail = ?1"
+//		 + "and		u.password = ?2")
+//	User findByMailPassword(String mail, String password);
+	
+	long countByEmailAndPassword(String email, String password);
 }

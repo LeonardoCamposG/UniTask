@@ -1,0 +1,37 @@
+@charset "UTF-8";
+
+/* CONFIGURAÇÃO DE OUTRAS MÍDIAS */
+
+/* 
+    ----- DEVICE BREAKPOINTS -----
+
+    - Telefone: -768px
+    - Tablet:   768px até 992px
+    - Desktop:  992px até 1200px
+    - Tv:       +1200px
+*/
+
+/*
+    ----- PALETA DE CORES -----
+    - v1: #F21B2D
+    - v2: #A6121F
+    - a1: #F29F05
+    - a2: #F2A950
+    - b1: #F2F2F2
+    - p1: #1B1613
+*/
+
+@media screen and (min-width: 1200px) {
+    section#login-container, section#signup-container{
+        width: 30%;
+    }
+
+    section#login-container h1, section#signup-container h1{
+        width: 80%;
+        border-bottom: 1px solid var(--dark6);
+    }
+
+    section#login-container{
+        height: 60%;
+    }
+}

@@ -1,0 +1,30 @@
+package com.UniTask.Application.services;
+
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.UniTask.Application.model.User;
+import com.UniTask.Application.repositories.UserRepository;
+
+@Service
+public class UserService {
+
+	@Autowired
+	private	UserRepository repository;
+	
+	public User findByNamePassword(String mail, String password) {
+		Optional<User> obj = Optional.of(repository.cou);
+		return obj.get();
+	}
+		
+	public User findById(Long id) {
+		Optional<User> obj = repository.findById(id);
+		return obj.get();
+	}
+	
+	public User insert(User obj) {
+		return repository.save(obj);	// retorna obj salvo.
+	}
+}
