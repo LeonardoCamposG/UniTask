@@ -1,0 +1,57 @@
+package com.UniTask.Application.services;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.verifyNoMoreInteractions;
+import static org.mockito.Mockito.when;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
+
+import com.UniTask.Application.model.User;
+import com.UniTask.Application.repositories.UserRepository;
+
+@ExtendWith(MockitoExtension.class)
+public class UserServiceTest {
+
+	@InjectMocks
+	UserService service;
+	
+	@Mock
+	UserRepository repository;
+	
+	User user;
+	User newUser;
+	
+	@BeforeEach
+	public void setUp() {
+		user = new User(1L, "Maria Brown", "maria@gmail.com", "988888888");
+		User newUser = new User(4L, "Luis Felipe", "lf@gmail.com", "988887658")
+	}
+	
+	@Test
+	public void testLoginSuccessful() {
+		when(repository.countByEmailAndPassword(user.getMail(), user.getPassword())).thenReturn(1L);
+		
+		Long test = service.login(user.getMail(), user.getPassword());
+		
+		assertEquals(1L, test);
+		verify(repository).countByEmailAndPassword(user.getMail(), user.getPassword());
+		verifyNoMoreInteractions(repository);
+	}
+	
+	@Test
+	public void insertNewAccount() {
+		when(repository.save(user)).thenReturn(user);
+		
+		User testUser = user;
+		
+		assertEquals(user, testUser);
+		verify(repository).save(user);
+		verifyNoMoreInteractions(repository);
+	}
+}

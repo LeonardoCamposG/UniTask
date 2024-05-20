@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="UserServiceTest" project="Application" tests="2" started="2" failures="1" errors="0" ignored="0">
+  <testsuite name="com.UniTask.Application.services.UserServiceTest" time="1.443" displayname="UserServiceTest" uniqueid="[engine:junit-jupiter]/[class:com.UniTask.Application.services.UserServiceTest]">
+    <testcase name="insertNewAccount" classname="com.UniTask.Application.services.UserServiceTest" time="1.422" displayname="insertNewAccount()" uniqueid="[engine:junit-jupiter]/[class:com.UniTask.Application.services.UserServiceTest]/[method:insertNewAccount()]">
+      <failure>Wanted but not invoked:
+repository.save(
+    com.UniTask.Application.model.User@23
+);
+-&gt; at com.UniTask.Application.services.UserServiceTest.insertNewAccount(UserServiceTest.java:54)
+Actually, there were zero interactions with this mock.
+&#13;
+	at com.UniTask.Application.services.UserServiceTest.insertNewAccount(UserServiceTest.java:54)&#13;
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)&#13;
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)&#13;
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)&#13;
+&#13;
+</failure>
+    </testcase>
+    <testcase name="testLoginSuccessful" classname="com.UniTask.Application.services.UserServiceTest" time="0.02" displayname="testLoginSuccessful()" uniqueid="[engine:junit-jupiter]/[class:com.UniTask.Application.services.UserServiceTest]/[method:testLoginSuccessful()]"/>
+  </testsuite>
+</testrun>
