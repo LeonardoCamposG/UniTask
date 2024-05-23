@@ -1,0 +1,5 @@
+package com.UniTask.Application.config;
+
+public class WebConfig {
+
+}

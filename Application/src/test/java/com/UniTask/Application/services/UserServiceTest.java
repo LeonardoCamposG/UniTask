@@ -33,12 +33,12 @@ public class UserServiceTest {
 	
 	@Test
 	public void testLoginSuccessful() {
-		when(repository.countByEmailAndPassword(user.getMail(), user.getPassword())).thenReturn(1L);
+		when(repository.countByEmailAndPassword(user.getEmail(), user.getPassword())).thenReturn(1L);
 		
-		Long test = service.login(user.getMail(), user.getPassword());
+		Long test = service.login(user.getEmail(), user.getPassword());
 		
 		assertEquals(1L, test);
-		verify(repository).countByEmailAndPassword(user.getMail(), user.getPassword());
+		verify(repository).countByEmailAndPassword(user.getEmail(), user.getPassword());
 		verifyNoMoreInteractions(repository);
 	}
 }

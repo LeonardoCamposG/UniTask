@@ -97,9 +97,3 @@ if(window.location.pathname.includes("cadastrar.html")) {
     });
     
 }
-
-
-
-
-
-

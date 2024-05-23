@@ -57,11 +57,11 @@ public class User implements Serializable{
 		this.name = name;
 	}
 
-	public String getMail() {
+	public String getEmail() {
 		return email;
 	}
 
-	public void setMail(String mail) {
+	public void setEmail(String mail) {
 		this.email = mail;
 	}
 

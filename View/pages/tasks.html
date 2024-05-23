@@ -1,177 +1,122 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/media-queries.css">
-    <script src="../js/script.js" defer></script>
-    <script src="../js/task.js"></script>
+    <!--Font Awesome CDN-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl5+0U5/4LB5R8Z8bo4gBtD1z9tZ4jq7b4lzN3Bdy6" crossorigin="anonymous"></script>
 
-    
-    
+    <!-- jQuery Mask Plugin -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js" integrity="sha512-Ww7G02uOqNkLEOVPLrHPp7W0sxK/2k1NkxPJvFK+M1ZlFAyL6t6F2nc/ZgKDA6E6snPyhsl79AGpTAvUVzJLUA==" crossorigin="anonymous"></script>
+
+
+
     <title>UniTask</title>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-
-    <div id="task-container">
-
-            <h1>Tasks</h1>
-
-        <section id="table-container">
-            <header>
-
-                <div class="filterEntries">
-                    <div class="entries">
-                        Show <select name="" id="table_size">
-                            <option value="10">10</option>
-                            <option value="20">20</option>
-                            <option value="50">50</option>
-                            <option value="100">100</option>
-                        </select> entries
-                    </div>
     
-                    <div class="filter">
-                        <label for="search">Search:</label>
-                        <input type="search" name="" id="search" placeholder="Enter task">
-                    </div>
+    <div class="container">
+        <h1 id="tittle">UniTask</h1>
+        <header>
+            
+            <div class="filterEntries">
+                <div class="entries">
+                    Mostrar <select name="" id="table_size">
+                        <option value="10">10</option>
+                        <option value="20">20</option>
+                        <option value="50">50</option>
+                        <option value="100">100</option>
+                    </select> tarefas
                 </div>
-    
-                <div id="addTaskBtn">
-                    <button>New Task</button>
+
+                <div class="filter">
+                    <label for="search">Pesquisar:</label>
+                    <input type="search" name="" id="search" placeholder="Insira task/descrição">
                 </div>
-    
-            </header>
-    
-    
-            <table>
-    
-                <thead>
-                    <tr class="heading">
-                        <th>Check</th>
-                        <th>ID</th>
-                        <th>Task</th>
-                        <th>Description</th>
-                        <th>Date</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
+            </div>
 
-                <tbody class="userInfo">
-                    <tr><td class="empty" colspan="11" align="center">No data available in table</td></tr>
-                    <tr>
-                        <td>
-                            <input type="checkbox" name="" id="">
-                        </td>
-                        <td>1</td>
-                        <td>Eat</td>
-                        <td>Description Description Description Description Description Description Description Description Description Description Description </td>
-                        <td>04/05/2024</td>
-                        <td>
-                            <button> <img src="../img/pen-solid.svg" alt=""> </button>
-                            <button><img src="../img/trash-solid.svg" alt=""> </i></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="checkbox" name="" id="">
-                        </td>
-                        <td>2</td>
-                        <td>Sleep</td>
-                        <td>Description Description Description Description Description Description Description Description Description Description Description </td>
-                        <td>04/05/2024</td>
-                        <td>
-                            <button> <img src="../img/pen-solid.svg" alt=""> </button>
-                            <button><img src="../img/trash-solid.svg" alt=""> </i></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="checkbox" name="" id="">
-                        </td>
-                        <td>3</td>
-                        <td>Study</td>
-                        <td>Description Description Description Description Description Description Description Description Description Description Description </td>
-                        <td>04/05/2024</td>
-                        <td>
-                            <button> <img src="../img/pen-solid.svg" alt=""> </button>
-                            <button><img src="../img/trash-solid.svg" alt=""> </i></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="checkbox" name="" id="">
-                        </td>
-                        <td>4</td>
-                        <td>Work out</td>
-                        <td>Description Description Description Description Description Description Description Description Description Description Description </td>
-                        <td>04/05/2024</td>
-                        <td>
-                            <button> <img src="../img/pen-solid.svg" alt=""> </button>
-                            <button><img src="../img/trash-solid.svg" alt=""> </i></button>
-                        </td>
-                    </tr>
-                </tbody>
+            <div class="addMemberBtn">
+                <button>Nova tarefa</button>
+            </div>
 
-                <footer>
-                    <span class="showEntries">Showing 1 to 10 of 50 entries</span>
-                    <div class="pagination">
-                        <button>Prev</button>
-                        <button class="active">1</button>
-                        <button>2</button>
-                        <button>3</button>
-                        <button>4</button>
-                        <button>5</button>
-                        <button>Next</button>
-                    </div>
-                </footer>
-        </section>
-    </main>
+        </header>
+
+
+        <table>
+
+            <thead>
+                <tr class="heading">
+                    <th>ID</th>
+                    <th>Tarefa</th>
+                    <th>Descrição</th>
+                    <th>Data</th>
+                    <th>Ação</th>
+                </tr>
+            </thead>
+
+
+            <tbody class="userInfo">
+                
+            </tbody>
+
+        </table>
+
+
+        <footer>
+            <span class="showEntries">Mostrando 1 a 10 de 50 tarefas</span>
+            <div class="pagination">
+        </footer>
+    </div>
+
+
+    <!--Popup Form-->
 
     <div class="dark_bg">
 
         <div class="popup">
-            <header>
-                <h2 class="modalTitle">Fill the form</h2>
+             <header>
+                <h2 class="modalTitle">Preencha os campos</h2>
                 <button class="closeBtn">&times;</button>
-            </header>
+             </header>
 
-            <div class="body">
+             <div class="body">
                 <form action="#" id="myForm">
                     <div class="inputFieldContainer">
-
-                        <div class="taskField">
+                        <div class="nameField">
                             <div class="form_control">
-                                <label for="Task">Task:</label>
-                                <input type="text" name="" id="Task" required>
+                                <label for="fName">Tarefa</label>
+                                <input type="text" name="" maxlength="255" id="fName" required>
                             </div>
+                        </div>
 
+                        <div class="postSalary">
                             <div class="form_control">
-                                <label for="lDescription">Description:</label>
-                                <input type="text" name="Description" id="Description" required>
+                                <label for="position">Descrição:</label>
+                                <input type="text" name="" id="position" maxlength="255" required>
                             </div>
                         </div>
 
                         <div class="form_control">
-                            <label for="sDate">Start Date:</label>
-                            <input type="date" name="" id="sDate" required>
-                        </div>
-
+                            <label for="sDate">Data:</label>
+                            <input type="date" name="sDate" id="sDate" min="2024-05-29 " max="2999-12-31" required>
                         </div>
                     </div>
                 </form>
+             </div>
 
-                <footer class="popupFooter">
-                    <button form="myForm" class="submitBtn">Submit</button>
-                </footer>
+             <footer class="popupFooter">
+                <button form="myForm" class="submitBtn">Enviar</button>
+             </footer>
         </div>
 
-
     </div>
-    
+
+
+    <script src="../js/task.js"></script>
 </body>
 </html>

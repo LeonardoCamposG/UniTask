@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.UniTask.Application.model.Task;
+import com.UniTask.Application.model.User;
 import com.UniTask.Application.repositories.TaskRepository;
 
 @Service
@@ -18,14 +19,24 @@ public class TaskService {
 	public List<Task> findAll(){
 		return repository.findAll();
 	}
+	
+	public List<Task> findAllByEmail(String email){
+		return repository.findAllByEmail(email);
+	}
 
 	public Task findById(Long id) {
 		Optional<Task> obj = repository.findById(id);
 		return obj.get();
 	}
 
-	public Task insert(Task obj) {
+	public Task insert(Task obj, String email) {
+		User user = repository.findUserByEmail(email);
+		obj.setUser(user);
 		return repository.save(obj); // retorna obj salvo.
+	}
+	
+	public User findId(String email) {
+		return repository.findUserByEmail(email);
 	}
 
 	public void delete(Long id) {
